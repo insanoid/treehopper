@@ -1,8 +1,10 @@
-name: Release
+name: Alfred Workflow Release
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'alfred-workflow/**'
 
 jobs:
   release:

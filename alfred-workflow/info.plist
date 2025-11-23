@@ -135,7 +135,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Karthikeya Udupa</string>
 	<key>description</key>
 	<string>Navigate and create git worktrees</string>
 	<key>disabled</key>
@@ -370,8 +370,8 @@ Configure via workflow settings (click [x] icon).</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/insanoid/treehopper</string>
 </dict>
 </plist>

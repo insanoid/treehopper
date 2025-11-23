@@ -1,5 +1,7 @@
 # Treehopper
 
+<img src="alfred-workflow/icon.png" width="128" alt="Treehopper icon">
+
 Hop between git worktrees.
 
 ## What are Git Worktrees?
