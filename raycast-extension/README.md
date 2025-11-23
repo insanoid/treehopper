@@ -23,7 +23,7 @@ Navigate and create git worktrees from Raycast.
 
 List all worktrees across your repos.
 
-<!-- ![List Worktrees](images/list-worktrees.png) -->
+![List Worktrees](images/list-worktree.png)
 
 - `Enter` - Open in editor
 - `Cmd+Enter` - Open in terminal
@@ -34,13 +34,13 @@ List all worktrees across your repos.
 
 Select a repo/branch, enter new branch name, creates worktree and opens in editor.
 
-<!-- ![Create Worktree](images/create-worktree.png) -->
+![Create Worktree](images/new-worktree.png)
 
 ## Configuration
 
 Configure via Raycast preferences (Cmd+, or click the gear icon):
 
-<!-- ![Configuration](images/configuration.png) -->
+![Configuration](images/settings.png)
 
 | Setting | Description | Example |
 |---------|-------------|---------|

@@ -6,6 +6,7 @@ import { getPreferences, getRepoPath } from "./config";
 
 export function getWorktrees(repos: RepoConfig[]): Worktree[] {
   const worktrees: Worktree[] = [];
+  const seen = new Set<string>();
 
   for (const repo of repos) {
     const repoPath = getRepoPath(repo.name);
@@ -27,6 +28,9 @@ export function getWorktrees(repos: RepoConfig[]): Worktree[] {
         if (match) {
           const wtPath = match[1].trim();
           const branch = match[2];
+          // Dedupe by path
+          if (seen.has(wtPath)) continue;
+          seen.add(wtPath);
           worktrees.push({
             path: wtPath,
             branch,
