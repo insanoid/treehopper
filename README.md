@@ -2,24 +2,47 @@
 
 <img src="alfred-workflow/icon.png" width="128" alt="Treehopper icon">
 
-Hop between git worktrees with ease.
+Hop between git worktrees with ease. Available for both Alfred and Raycast.
 
 ## Alfred Workflow
 
 Navigate and create git worktrees directly from Alfred.
 
-<img src="alfred-workflow/images/wt_open.png" width="600" alt="Treehopper Alfred workflow">
-
 **[Download Latest Release](../../releases/latest)** | [Full Documentation](alfred-workflow/README.md)
 
-### Features
-
+### Commands
 - `wt` - List and open existing worktrees
-- `wtn` - Create new worktrees from any branch
-- Auto-discover repos or configure manually
-- Customizable editor and terminal
+- `wtn` - Create new worktree with new branch from base
+
+## Raycast Extension
+
+Same functionality for Raycast users.
+
+### Commands
+- **List Worktrees** - Browse and open existing worktrees
+- **Create Worktree** - Create new worktree with new branch
+
+### Install
+```bash
+cd raycast-extension && npm install && npm run dev
+```
 
 ---
+
+## Features
+
+- Auto-discover repos or configure manually
+- Customizable editor (Cursor, VS Code, Zed, etc.)
+- Customizable terminal (Terminal, iTerm, Warp)
+- Supports `worktrees.json` for custom setup commands
+- Copies `.env` files from root repo automatically
+
+## How It Works
+
+1. Select a repo and base branch (e.g., `api` from `main`)
+2. Enter new branch name (e.g., `feat/my-feature`)
+3. Creates worktree with new branch based on selected base
+4. Runs setup commands and opens in your editor
 
 ## What are Git Worktrees?
 
@@ -43,12 +66,17 @@ cd ../project-feature-b   # just switch directories
 - Keep long-running tasks (tests, builds) running while switching context
 - Review PRs without disrupting your current work
 
-## Prerequisites
+## worktrees.json
 
-- [worktree-cli](https://github.com/johnlindquist/worktree-cli) (optional but recommended)
+Add a `worktrees.json` to your repo root to customize setup:
 
-```bash
-pnpm install -g @johnlindquist/worktree
+```json
+{
+  "setup-worktree": [
+    "npm install",
+    "cp $ROOT_WORKTREE_PATH/.env .env"
+  ]
+}
 ```
 
 ## License

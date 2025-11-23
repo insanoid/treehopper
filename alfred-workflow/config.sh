@@ -18,8 +18,11 @@ REPOS=()
 if [[ "$AUTO_DISCOVER" == "1" ]]; then
     # Auto-discover git repos in TREEHOPPER_DIR
     for dir in "$TREEHOPPER_DIR"/*/; do
+        repo_name=$(basename "$dir")
+        # Skip worktree folders (wt-*)
+        [[ "$repo_name" == wt-* ]] && continue
+
         if [[ -d "$dir/.git" ]] || [[ -f "$dir/.git" ]]; then
-            repo_name=$(basename "$dir")
             # Get default branch (usually main or master)
             default_branch=$(cd "$dir" && git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
             if [[ -z "$default_branch" ]]; then

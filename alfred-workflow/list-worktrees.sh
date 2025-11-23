@@ -4,6 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/config.sh"
 
 items=()
+seen_paths=""
 
 for repo_config in "${REPOS[@]}"; do
     repo=$(echo "$repo_config" | cut -d: -f1)
@@ -13,6 +14,12 @@ for repo_config in "${REPOS[@]}"; do
         while IFS= read -r line; do
             wt_path=$(echo "$line" | awk '{print $1}')
             branch=$(echo "$line" | sed 's/.*\[\(.*\)\].*/\1/')
+
+            # Skip if already seen (deduplication)
+            if echo "$seen_paths" | grep -qF "|$wt_path|"; then
+                continue
+            fi
+            seen_paths="$seen_paths|$wt_path|"
 
             if [[ "$wt_path" == "$repo_path" ]]; then
                 display_name="$repo [root]"

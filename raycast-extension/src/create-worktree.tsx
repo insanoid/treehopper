@@ -1,6 +1,7 @@
 import {
   Action,
   ActionPanel,
+  closeMainWindow,
   Form,
   Icon,
   List,
@@ -11,7 +12,6 @@ import {
 import { useEffect, useState } from "react";
 import { getPreferences, getRepos } from "./utils/config";
 import { createWorktree } from "./utils/git";
-import { openInEditor } from "./utils/open";
 
 interface BranchOption {
   repo: string;
@@ -79,14 +79,11 @@ export default function CreateWorktree() {
             actions={
               <ActionPanel>
                 <Action
-                  title="Enter Branch Name"
-                  icon={Icon.ArrowRight}
+                  title="Create Worktree"
+                  icon={Icon.Plus}
                   onAction={() =>
                     push(
-                      <BranchNameForm
-                        repo={opt.repo}
-                        baseBranch={opt.branch}
-                      />,
+                      <WorktreeForm repo={opt.repo} baseBranch={opt.branch} />,
                     )
                   }
                 />
@@ -99,16 +96,16 @@ export default function CreateWorktree() {
   );
 }
 
-function BranchNameForm({
+function WorktreeForm({
   repo,
   baseBranch,
 }: {
   repo: string;
   baseBranch: string;
 }) {
+  const prefs = getPreferences();
   const [branchName, setBranchName] = useState("feat/");
   const [isCreating, setIsCreating] = useState(false);
-  const prefs = getPreferences();
 
   async function handleSubmit() {
     if (!branchName.trim()) {
@@ -122,18 +119,18 @@ function BranchNameForm({
     setIsCreating(true);
     await showToast({
       style: Toast.Style.Animated,
-      title: "Creating worktree...",
+      title: "Creating worktree in terminal...",
     });
 
     const result = createWorktree(repo, baseBranch, branchName);
 
-    if (result.success && result.path) {
+    if (result.success) {
       await showToast({
         style: Toast.Style.Success,
-        title: "Worktree created",
-        message: result.path,
+        title: "Worktree creation started",
+        message: "Check terminal for progress",
       });
-      openInEditor(result.path);
+      await closeMainWindow();
     } else {
       await showToast({
         style: Toast.Style.Failure,
@@ -163,13 +160,15 @@ function BranchNameForm({
       />
       <Form.TextField
         id="branchName"
-        title="Branch Name"
+        title="New Branch Name"
         placeholder="feat/my-feature"
         value={branchName}
         onChange={setBranchName}
-        info="Enter the new branch name (e.g., feat/my-feature)"
+        info={`New branch will be created from ${baseBranch}`}
       />
-      <Form.Description text={`Will open in ${prefs.editor} after creation`} />
+      <Form.Description
+        text={`Will run setup in terminal, then open in ${prefs.editor}`}
+      />
     </Form>
   );
 }
