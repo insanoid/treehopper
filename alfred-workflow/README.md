@@ -19,8 +19,8 @@ After installing, configure via Alfred's workflow settings:
 | **Repos Directory** | Base path containing repos | `/Users/you/Code` |
 | **Auto Discover** | Scan all git repos in directory | Checkbox |
 | **Repositories** | Manual list (if auto-discover off) | `api:main:production,frontend:main` |
-| **Editor** | Command to open worktrees | `cursor`, `code`, `webstorm` |
-| **Terminal** | Terminal for Cmd+Enter | iTerm or Terminal |
+| **Editor** | CLI command to open worktrees | `cursor`, `code`, `webstorm`, `zed` |
+| **Terminal** | Terminal app for Cmd+Enter | `terminal`, `iterm`, `warp` |
 
 ### Auto Discover vs Manual
 

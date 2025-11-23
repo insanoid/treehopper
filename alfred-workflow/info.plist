@@ -86,25 +86,18 @@
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>iterm</string>
-				<key>pairs</key>
-				<array>
-					<array>
-						<string>iTerm</string>
-						<string>iterm</string>
-					</array>
-					<array>
-						<string>Terminal</string>
-						<string>terminal</string>
-					</array>
-				</array>
+				<string>terminal</string>
+				<key>placeholder</key>
+				<string>terminal, iterm, warp</string>
+				<key>required</key>
+				<false/>
 			</dict>
 			<key>description</key>
-			<string>Terminal app for Cmd+Enter</string>
+			<string>Terminal app for Cmd+Enter (terminal, iterm, warp, or custom)</string>
 			<key>label</key>
 			<string>Terminal</string>
 			<key>type</key>
-			<string>popupbutton</string>
+			<string>textfield</string>
 			<key>variable</key>
 			<string>treehopper_terminal</string>
 		</dict>
@@ -387,7 +380,7 @@ Configure via workflow settings (click [x] icon).</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.4.0</string>
+	<string>1.5.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/insanoid/treehopper</string>
 </dict>

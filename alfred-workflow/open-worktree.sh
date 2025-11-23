@@ -8,8 +8,9 @@ ARG="$1"
 if [[ "$ARG" == terminal:* ]]; then
     PATH_TO_OPEN="${ARG#terminal:}"
 
-    if [[ "$TERMINAL_APP" == "iterm" ]]; then
-        osascript << EOF
+    case "$TERMINAL_APP" in
+        iterm)
+            osascript << EOF
 tell application "iTerm"
     activate
     create window with default profile
@@ -18,14 +19,29 @@ tell application "iTerm"
     end tell
 end tell
 EOF
-    else
-        osascript << EOF
+            ;;
+        warp)
+            osascript << EOF
+tell application "Warp"
+    activate
+    tell application "System Events"
+        keystroke "t" using command down
+        delay 0.2
+        keystroke "cd '$PATH_TO_OPEN'"
+        key code 36
+    end tell
+end tell
+EOF
+            ;;
+        terminal|*)
+            osascript << EOF
 tell application "Terminal"
     activate
     do script "cd '$PATH_TO_OPEN'"
 end tell
 EOF
-    fi
+            ;;
+    esac
 else
     $EDITOR_CMD "$ARG"
 fi
