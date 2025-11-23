@@ -2,7 +2,24 @@
 
 <img src="alfred-workflow/icon.png" width="128" alt="Treehopper icon">
 
-Hop between git worktrees.
+Hop between git worktrees with ease.
+
+## Alfred Workflow
+
+Navigate and create git worktrees directly from Alfred.
+
+<img src="alfred-workflow/previews/wt_open.png" width="600" alt="Treehopper Alfred workflow">
+
+**[Download Latest Release](../../releases/latest)** | [Full Documentation](alfred-workflow/README.md)
+
+### Features
+
+- `wt` - List and open existing worktrees
+- `wtn` - Create new worktrees from any branch
+- Auto-discover repos or configure manually
+- Customizable editor and terminal
+
+---
 
 ## What are Git Worktrees?
 
@@ -33,12 +50,6 @@ cd ../project-feature-b   # just switch directories
 ```bash
 pnpm install -g @johnlindquist/worktree
 ```
-
-## Alfred Workflow
-
-Navigate and create git worktrees from Alfred.
-
-[Download from Releases](../../releases) | [Setup Guide](alfred-workflow/README.md)
 
 ## License
 
