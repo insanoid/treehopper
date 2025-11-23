@@ -1,0 +1,46 @@
+<p>Quickly navigate between git worktrees or create new ones without leaving Alfred.</p>
+
+<p><strong><a href="https://github.com/insanoid/treehopper/releases/latest">Download from GitHub</a></strong></p>
+
+<hr>
+
+<h2>Usage</h2>
+
+<h3>List Worktrees</h3>
+
+<p>Search your worktrees via the <code>wt</code> keyword.</p>
+
+<p><img src="https://raw.githubusercontent.com/insanoid/treehopper/main/alfred-workflow/images/wt_open.png" alt="List worktrees"></p>
+
+<ul>
+<li><kbd>↩</kbd> Open in editor.</li>
+<li><kbd>⌘</kbd><kbd>↩</kbd> Open in terminal.</li>
+</ul>
+
+<h3>Create Worktree</h3>
+
+<p>Create a new worktree via the <code>wtn</code> keyword. Select a repository and base branch, then enter your new branch name.</p>
+
+<p><img src="https://raw.githubusercontent.com/insanoid/treehopper/main/alfred-workflow/images/wt_new.png" alt="Create worktree"></p>
+
+<hr>
+
+<h2>Configuration</h2>
+
+<p>Configure via the Workflow's Configuration.</p>
+
+<p><img src="https://raw.githubusercontent.com/insanoid/treehopper/main/alfred-workflow/images/alfred_configuration.png" alt="Configuration"></p>
+
+<ul>
+<li><strong>Repos Directory</strong> – Base path containing your git repositories.</li>
+<li><strong>Auto Discover</strong> – Automatically find all git repos and detect default branches.</li>
+<li><strong>Repositories</strong> – Manual list if auto-discover is off (format: <code>name:branch:hotfix</code>).</li>
+<li><strong>Editor</strong> – CLI command to open worktrees (<code>cursor</code>, <code>code</code>, <code>zed</code>).</li>
+<li><strong>Terminal</strong> – Terminal app for <kbd>⌘</kbd><kbd>↩</kbd> (<code>terminal</code>, <code>iterm</code>, <code>warp</code>).</li>
+</ul>
+
+<hr>
+
+<h2>Optional</h2>
+
+<p>Works well with <a href="https://github.com/johnlindquist/worktree-cli">worktree-cli</a> for automated setup scripts when creating worktrees.</p>
