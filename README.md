@@ -14,6 +14,7 @@ Navigate and create git worktrees directly from Alfred.
 **[Download Latest Release](../../releases/latest)** | [Full Documentation](alfred-workflow/README.md)
 
 ### Commands
+
 - `wt` - List and open existing worktrees
 - `wtn` - Create new worktree with new branch from base
 
@@ -21,16 +22,18 @@ Navigate and create git worktrees directly from Alfred.
 
 Same functionality for Raycast users.
 
-<img src="raycast-extension/images/list-worktree.png" width="600" alt="Raycast - List worktrees">
-<img src="raycast-extension/images/new-worktree.png" width="600" alt="Raycast - Create worktree">
+<img src="raycast-extension/media/list-worktree.png" width="600" alt="Raycast - List worktrees">
+<img src="raycast-extension/media/new-worktree.png" width="600" alt="Raycast - Create worktree">
 
 [Full Documentation](raycast-extension/README.md)
 
 ### Commands
+
 - **List Worktrees** - Browse and open existing worktrees
 - **Create Worktree** - Create new worktree with new branch
 
 ### Install
+
 ```bash
 cd raycast-extension && npm install && npm run dev
 ```
@@ -68,6 +71,7 @@ cd ../project-feature-b   # just switch directories
 ```
 
 **Benefits:**
+
 - Work on multiple features/fixes simultaneously
 - No stashing, no WIP commits
 - Keep long-running tasks (tests, builds) running while switching context
@@ -79,10 +83,7 @@ Add a `worktrees.json` to your repo root to customize setup:
 
 ```json
 {
-  "setup-worktree": [
-    "npm install",
-    "cp $ROOT_WORKTREE_PATH/.env .env"
-  ]
+  "setup-worktree": ["npm install", "cp $ROOT_WORKTREE_PATH/.env .env"]
 }
 ```
 
