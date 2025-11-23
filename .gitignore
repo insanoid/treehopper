@@ -1,2 +1,4 @@
 *.alfredworkflow
 .DS_Store
+alfred-workflow/prefs.plist
+node_modules/

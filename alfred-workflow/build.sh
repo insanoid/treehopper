@@ -14,6 +14,7 @@ zip -r "$OUTPUT" \
     config.sh \
     list-worktrees.sh \
     new-worktree-options.sh \
+    handle-action.sh \
     create-worktree.sh \
     open-worktree.sh \
     icon.png \
