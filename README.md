@@ -8,6 +8,9 @@ Hop between git worktrees with ease. Available for both Alfred and Raycast.
 
 Navigate and create git worktrees directly from Alfred.
 
+<img src="alfred-workflow/images/wt_open.png" width="600" alt="Alfred - List worktrees">
+<img src="alfred-workflow/images/wt_new.png" width="600" alt="Alfred - Create worktree">
+
 **[Download Latest Release](../../releases/latest)** | [Full Documentation](alfred-workflow/README.md)
 
 ### Commands
@@ -17,6 +20,11 @@ Navigate and create git worktrees directly from Alfred.
 ## Raycast Extension
 
 Same functionality for Raycast users.
+
+<img src="raycast-extension/images/list-worktree.png" width="600" alt="Raycast - List worktrees">
+<img src="raycast-extension/images/new-worktree.png" width="600" alt="Raycast - Create worktree">
+
+[Full Documentation](raycast-extension/README.md)
 
 ### Commands
 - **List Worktrees** - Browse and open existing worktrees
@@ -35,7 +43,6 @@ cd raycast-extension && npm install && npm run dev
 - Customizable editor (Cursor, VS Code, Zed, etc.)
 - Customizable terminal (Terminal, iTerm, Warp)
 - Supports `worktrees.json` for custom setup commands
-- Copies `.env` files from root repo automatically
 
 ## How It Works
 
