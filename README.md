@@ -8,7 +8,7 @@ Hop between git worktrees with ease.
 
 Navigate and create git worktrees directly from Alfred.
 
-<img src="alfred-workflow/previews/wt_open.png" width="600" alt="Treehopper Alfred workflow">
+<img src="alfred-workflow/images/wt_open.png" width="600" alt="Treehopper Alfred workflow">
 
 **[Download Latest Release](../../releases/latest)** | [Full Documentation](alfred-workflow/README.md)
 
