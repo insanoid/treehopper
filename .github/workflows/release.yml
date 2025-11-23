@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep -A1 '<key>version</key>' alfred-workflow/info.plist | grep string | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build workflow
+        working-directory: alfred-workflow
+        run: |
+          zip -r ../Treehopper.alfredworkflow \
+            info.plist \
+            config.sh \
+            list-worktrees.sh \
+            new-worktree-options.sh \
+            create-worktree.sh \
+            open-worktree.sh \
+            icon.png
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          files: Treehopper.alfredworkflow
+          generate_release_notes: true
