@@ -16,7 +16,8 @@ zip -r "$OUTPUT" \
     new-worktree-options.sh \
     create-worktree.sh \
     open-worktree.sh \
-    icon.png
+    icon.png \
+    icon-new.png
 
 echo "Built: $SCRIPT_DIR/$OUTPUT"
 echo ""

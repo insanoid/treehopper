@@ -15,7 +15,7 @@ for repo_config in "${REPOS[@]}"; do
         \"title\": \"$repo (from $default_base)\",
         \"subtitle\": \"Create new worktree from $default_base branch\",
         \"arg\": \"$repo:$default_base\",
-        \"icon\": {\"path\": \"icon.png\"}
+        \"icon\": {\"path\": \"icon-new.png\"}
     }")
 
     # Hotfix branch option if defined
@@ -24,7 +24,7 @@ for repo_config in "${REPOS[@]}"; do
             \"title\": \"$repo (from $hotfix_base)\",
             \"subtitle\": \"Create hotfix worktree from $hotfix_base branch\",
             \"arg\": \"$repo:$hotfix_base\",
-            \"icon\": {\"path\": \"icon.png\"}
+            \"icon\": {\"path\": \"icon-new.png\"}
         }")
     fi
 done

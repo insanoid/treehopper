@@ -218,11 +218,11 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>68</integer>
 				<key>script</key>
-				<string>./open-worktree.sh "{query}"</string>
+				<string>./open-worktree.sh {query}</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -387,7 +387,7 @@ Configure via workflow settings (click [x] icon).</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.3.0</string>
+	<string>1.4.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/insanoid/treehopper</string>
 </dict>

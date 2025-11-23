@@ -31,7 +31,8 @@ jobs:
             new-worktree-options.sh \
             create-worktree.sh \
             open-worktree.sh \
-            icon.png
+            icon.png \
+            icon-new.png
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
