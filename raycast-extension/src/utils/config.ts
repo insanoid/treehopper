@@ -21,6 +21,9 @@ export function getRepos(): RepoConfig[] {
       for (const entry of entries) {
         if (!entry.isDirectory()) continue;
 
+        // Skip worktree folders (wt-* naming convention)
+        if (entry.name.startsWith("wt-")) continue;
+
         const repoPath = path.join(prefs.reposDirectory, entry.name);
         const gitPath = path.join(repoPath, ".git");
 

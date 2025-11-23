@@ -17,14 +17,16 @@
       "title": "List Worktrees",
       "subtitle": "Treehopper",
       "description": "List and open existing git worktrees",
-      "mode": "view"
+      "mode": "view",
+      "keywords": ["wt", "worktree", "git"]
     },
     {
       "name": "create-worktree",
       "title": "Create Worktree",
       "subtitle": "Treehopper",
       "description": "Create a new git worktree",
-      "mode": "view"
+      "mode": "view",
+      "keywords": ["wtn", "new", "worktree", "git"]
     }
   ],
   "preferences": [

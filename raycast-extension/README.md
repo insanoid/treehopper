@@ -4,19 +4,26 @@ Navigate and create git worktrees from Raycast.
 
 ## Install
 
-```bash
-cd raycast-extension
-npm install
-npm run dev
-```
+1. Download the latest `Treehopper-Raycast.zip` from [Releases](https://github.com/insanoid/treehopper/releases)
+2. Unzip the file
+3. Open Terminal and run:
+   ```bash
+   cd ~/Downloads/Treehopper-Raycast  # or wherever you unzipped
+   npm install
+   npm run dev
+   ```
+4. Raycast will open with the extension loaded
+5. Configure your settings when prompted
 
-This opens Raycast with the extension in dev mode.
+> **Note**: You need [Node.js](https://nodejs.org/) installed. Download the LTS version if you don't have it.
 
 ## Commands
 
 ### List Worktrees
 
 List all worktrees across your repos.
+
+<!-- ![List Worktrees](images/list-worktrees.png) -->
 
 - `Enter` - Open in editor
 - `Cmd+Enter` - Open in terminal
@@ -27,9 +34,13 @@ List all worktrees across your repos.
 
 Select a repo/branch, enter new branch name, creates worktree and opens in editor.
 
+<!-- ![Create Worktree](images/create-worktree.png) -->
+
 ## Configuration
 
-Configure via Raycast preferences:
+Configure via Raycast preferences (Cmd+, or click the gear icon):
+
+<!-- ![Configuration](images/configuration.png) -->
 
 | Setting | Description | Example |
 |---------|-------------|---------|
