@@ -15,15 +15,16 @@ After installing, configure via Alfred's workflow settings:
 | Setting | Description | Example |
 |---------|-------------|---------|
 | **Repos Directory** | Base path containing repos | `/Users/you/Code` |
-| **Repositories** | Comma-separated list | `api:main:production,frontend:main` |
+| **Auto Discover** | Scan all git repos in directory | Checkbox |
+| **Repositories** | Manual list (if auto-discover off) | `api:main:production,frontend:main` |
 | **Editor** | Command to open worktrees | `cursor`, `code`, `webstorm` |
 | **Terminal** | Terminal for Cmd+Enter | iTerm or Terminal |
 
-### Repository Format
+### Auto Discover vs Manual
 
-```
-name:default_branch:hotfix_branch
-```
+**Auto Discover** (recommended): Enable the checkbox to automatically find all git repos in your directory and detect their default branches.
+
+**Manual**: Specify repos explicitly with format `name:default_branch:hotfix_branch`
 
 - `name` - folder name in repos directory
 - `default_branch` - branch for new worktrees (usually `main`)

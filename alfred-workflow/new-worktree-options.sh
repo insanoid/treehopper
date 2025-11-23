@@ -29,5 +29,9 @@ for repo_config in "${REPOS[@]}"; do
     fi
 done
 
-json_items=$(IFS=,; echo "${items[*]}")
-echo "{\"items\":[$json_items]}"
+if [[ ${#items[@]} -eq 0 ]]; then
+    echo '{"items":[{"title":"Not configured","subtitle":"Configure repos or enable auto-discover in workflow settings","valid":false}]}'
+else
+    json_items=$(IFS=,; echo "${items[*]}")
+    echo "{\"items\":[$json_items]}"
+fi

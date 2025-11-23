@@ -37,8 +37,8 @@ for repo_config in "${REPOS[@]}"; do
 done
 
 if [[ ${#items[@]} -eq 0 ]]; then
-    if [[ -z "$REPOS_RAW" ]]; then
-        echo '{"items":[{"title":"Not configured","subtitle":"Configure repos in Alfred workflow settings","valid":false}]}'
+    if [[ ${#REPOS[@]} -eq 0 ]]; then
+        echo '{"items":[{"title":"Not configured","subtitle":"Configure repos or enable auto-discover in workflow settings","valid":false}]}'
     else
         echo '{"items":[{"title":"No worktrees found","subtitle":"Use wtn to create one","valid":false}]}'
     fi

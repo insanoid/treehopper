@@ -31,14 +31,31 @@
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<false/>
+				<key>text</key>
+				<string>Scan all git repos in directory</string>
+			</dict>
+			<key>description</key>
+			<string>Auto-discover repos and their default branches</string>
+			<key>label</key>
+			<string>Auto Discover</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>treehopper_auto_discover</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string></string>
 				<key>placeholder</key>
 				<string>api:main:production,frontend:main</string>
 				<key>required</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>description</key>
-			<string>Comma-separated repos. Format: name:default_branch:hotfix_branch</string>
+			<string>Manual list (ignored if auto-discover on). Format: name:branch:hotfix</string>
 			<key>label</key>
 			<string>Repositories</string>
 			<key>type</key>
@@ -370,7 +387,7 @@ Configure via workflow settings (click [x] icon).</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/insanoid/treehopper</string>
 </dict>
