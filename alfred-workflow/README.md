@@ -12,6 +12,8 @@ Navigate and create git worktrees from Alfred.
 
 After installing, configure via Alfred's workflow settings:
 
+<img src="previews/alfred_configuration.png" width="600" alt="Alfred configuration">
+
 | Setting | Description | Example |
 |---------|-------------|---------|
 | **Repos Directory** | Base path containing repos | `/Users/you/Code` |
@@ -39,9 +41,20 @@ backend:develop         # backend branching from develop
 
 ## Usage
 
+### List Worktrees (`wt`)
+
+<img src="previews/wt_open.png" width="600" alt="List worktrees">
+
 | Keyword | Action |
 |---------|--------|
 | `wt` | List all worktrees |
+
+### Create New Worktree (`wtn`)
+
+<img src="previews/wt_new.png" width="600" alt="Create new worktree">
+
+| Keyword | Action |
+|---------|--------|
 | `wtn` | Create new worktree |
 
 **Modifiers:**
