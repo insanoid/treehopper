@@ -1,23 +1,21 @@
 #!/bin/bash
 
-# Configuration for Prosperity Worktrees
-# Edit these values to customize for your setup
+# Treehopper Configuration
+# These are read from Alfred workflow variables (Configure in Alfred UI)
+# Fallback to environment variables or defaults
 
-# Base directory containing all repos
-PROSPERITY_DIR="${PROSPERITY_DIR:-/Users/karthikeyaudupa/Code/Prosperity}"
+# Base directory containing repos
+TREEHOPPER_DIR="${treehopper_dir:-${TREEHOPPER_DIR:-$HOME/Code}}"
 
-# Repos to scan for worktrees: "name:default_base:hotfix_base"
-# - name: folder name in PROSPERITY_DIR
-# - default_base: branch for normal worktrees
-# - hotfix_base: (optional) branch for hotfix worktrees, omit if not needed
-REPOS=(
-    "api:main:production"
-    "prosperity.app:main"
-    "partner.life.li:main"
-)
+# Repos: "name:default_branch:hotfix_branch" (comma-separated)
+# Example: "api:main:production,frontend:main,backend:main"
+REPOS_RAW="${treehopper_repos:-${TREEHOPPER_REPOS:-}}"
+
+# Parse repos into array
+IFS=',' read -ra REPOS <<< "$REPOS_RAW"
 
 # Editor command
-EDITOR_CMD="${EDITOR_CMD:-cursor}"
+EDITOR_CMD="${treehopper_editor:-${TREEHOPPER_EDITOR:-cursor}}"
 
 # Terminal app (iterm or terminal)
-TERMINAL_APP="${TERMINAL_APP:-iterm}"
+TERMINAL_APP="${treehopper_terminal:-${TREEHOPPER_TERMINAL:-iterm}}"

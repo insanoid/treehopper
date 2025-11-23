@@ -7,7 +7,7 @@ items=()
 
 for repo_config in "${REPOS[@]}"; do
     repo=$(echo "$repo_config" | cut -d: -f1)
-    repo_path="$PROSPERITY_DIR/$repo"
+    repo_path="$TREEHOPPER_DIR/$repo"
 
     if [[ -d "$repo_path/.git" ]] || [[ -f "$repo_path/.git" ]]; then
         while IFS= read -r line; do
@@ -37,7 +37,11 @@ for repo_config in "${REPOS[@]}"; do
 done
 
 if [[ ${#items[@]} -eq 0 ]]; then
-    echo '{"items":[{"title":"No worktrees found","subtitle":"Use wtn to create one","valid":false}]}'
+    if [[ -z "$REPOS_RAW" ]]; then
+        echo '{"items":[{"title":"Not configured","subtitle":"Configure repos in Alfred workflow settings","valid":false}]}'
+    else
+        echo '{"items":[{"title":"No worktrees found","subtitle":"Use wtn to create one","valid":false}]}'
+    fi
 else
     json_items=$(IFS=,; echo "${items[*]}")
     echo "{\"items\":[$json_items]}"

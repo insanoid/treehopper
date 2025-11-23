@@ -6,6 +6,92 @@
 	<string>com.treehopper.workflow</string>
 	<key>category</key>
 	<string>Productivity</string>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>/Users/you/Code</string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Base directory containing your git repositories</string>
+			<key>label</key>
+			<string>Repos Directory</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>treehopper_dir</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>api:main:production,frontend:main</string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Comma-separated repos. Format: name:default_branch:hotfix_branch</string>
+			<key>label</key>
+			<string>Repositories</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>treehopper_repos</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>cursor</string>
+				<key>placeholder</key>
+				<string>cursor, code, webstorm</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Editor command to open worktrees</string>
+			<key>label</key>
+			<string>Editor</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>treehopper_editor</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>iterm</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>iTerm</string>
+						<string>iterm</string>
+					</array>
+					<array>
+						<string>Terminal</string>
+						<string>terminal</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Terminal app for Cmd+Enter</string>
+			<key>label</key>
+			<string>Terminal</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>treehopper_terminal</string>
+		</dict>
+	</array>
 	<key>connections</key>
 	<dict>
 		<key>1A1A1A1A-1111-1111-1111-111111111111</key>
@@ -244,7 +330,7 @@ Actions:
 - Enter: Open in editor
 - Cmd+Enter: Open in terminal
 
-Config: Edit config.sh to customize repos, editor, and terminal.</string>
+Configure via workflow settings (click [x] icon).</string>
 	<key>uidata</key>
 	<dict>
 		<key>1A1A1A1A-1111-1111-1111-111111111111</key>
@@ -284,7 +370,7 @@ Config: Edit config.sh to customize repos, editor, and terminal.</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

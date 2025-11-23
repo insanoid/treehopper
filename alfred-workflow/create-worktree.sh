@@ -10,11 +10,11 @@ BRANCH_NAME="$2"    # e.g., "feat/my-feature"
 REPO=$(echo "$REPO_BASE" | cut -d: -f1)
 BASE_BRANCH=$(echo "$REPO_BASE" | cut -d: -f2)
 
-REPO_PATH="$PROSPERITY_DIR/$REPO"
+REPO_PATH="$TREEHOPPER_DIR/$REPO"
 
 # Sanitize branch name for folder (replace / with -)
 FOLDER_BRANCH=$(echo "$BRANCH_NAME" | tr '/' '-')
-WORKTREE_PATH="$PROSPERITY_DIR/wt-$REPO-$FOLDER_BRANCH"
+WORKTREE_PATH="$TREEHOPPER_DIR/wt-$REPO-$FOLDER_BRANCH"
 
 # Check if worktree already exists
 if [[ -d "$WORKTREE_PATH" ]]; then
